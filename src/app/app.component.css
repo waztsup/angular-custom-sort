@@ -1,0 +1,69 @@
+*:not(i) {
+  font-family: Lato;
+}
+
+p {
+  margin: 0;
+}
+
+input[type='checkbox'] {
+  margin-right: 0.5rem;
+}
+
+.page-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.page-container hr {
+  width: 100%;
+}
+
+.sort-container {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.drag-handle {
+  padding: 0 0.25rem;
+  cursor: pointer;
+}
+
+.fa-stack i.inactive {
+  opacity: 0.1;
+}
+
+.fa-stack {
+  cursor: pointer;
+}
+
+.fa-stack.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.items-container {
+  flex: 1;
+  overflow: auto;
+}
+
+.item {
+  margin-bottom: 1rem;
+}
+
+.author,
+.series {
+  margin-right: 0.5rem;
+}
+
+.author,
+.series,
+.index {
+  font-size: 14px;
+}
+
+.read {
+  font-size: 12px;
+}

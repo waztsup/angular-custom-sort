@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
 import { books } from './books';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import moment = require('moment');
