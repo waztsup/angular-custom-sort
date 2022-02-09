@@ -1,0 +1,43 @@
+<div class="page-container">
+  <h3>Custom sort</h3>
+  <hr />
+  <div cdkDropList class="sort-container" (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let option of sort" cdkDrag class="sort-option">
+      <i cdkDragHandle class="fa-solid fa-arrows-up-down drag-handle"></i>
+      <input
+        [(ngModel)]="option.selected"
+        type="checkbox"
+        (ngModelChange)="resort()"
+      />
+      <span>{{ option.fieldName }}</span>
+      <span
+        class="fa-stack fa-1x"
+        [class.disabled]="!option.selected"
+        (click)="
+          option.sortDir = option.sortDir === 'asc' ? 'desc' : 'asc'; resort()
+        "
+      >
+        <i
+          class="fa-solid fa-sort-up fa-stack-1x"
+          [class.inactive]="option.sortDir !== 'asc'"
+        ></i>
+        <i
+          class="fa-solid fa-sort-down fa-stack-1x"
+          [class.inactive]="option.sortDir !== 'desc'"
+        ></i>
+      </span>
+    </div>
+  </div>
+  <hr />
+  <div class="items-container">
+    <div *ngFor="let item of list; let i = index" class="item">
+      <p class="title">{{ item.title }}</p>
+      <p>
+        <span class="author">{{ item.author }}</span>
+        <span class="series">{{ item.series }}</span>
+        <span class="index">{{ item.index }}</span>
+      </p>
+      <small class="read">{{ item.dateAdded | date: 'dd-MM-YYYY' }}</small>
+    </div>
+  </div>
+</div>
